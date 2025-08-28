@@ -4,29 +4,28 @@ A RESTful API built with Ruby on Rails that performs sentiment analysis on input
 
 Table of Contents
 
-Project Overview
+1. Project Overview
 
-Features
+2. Features
 
-Technology Stack
+3. Technology Stack
 
-Architecture Diagram
+4. Architecture Diagram
 
-Getting Started
+5. Getting Started
 
-Prerequisites
+6. Prerequisites
 
-Running Locally
+7. Running Locally
 
-Docker Build & Run
+8. Docker Build & Run
 
-Kubernetes Deployment
+9. Kubernetes Deployment
 
-API Usage
+10. API Usage
 
-Project Status
+11. Project Status
 
-Contact
 
 Project Overview
 
@@ -53,7 +52,6 @@ Features
   "score": 2
 }
 
-
 Handles positive, negative, and neutral sentiments
 
 Fully containerized for portability
@@ -63,13 +61,14 @@ Easy deployment to Kubernetes clusters via Helm
 Real-time logging and monitoring through kubectl logs
 
 Technology Stack
-Layer	Technology
+
 Backend	Ruby on Rails 8.0
 Language	Ruby 3.2
 Containerization	Docker
 Container Orchestration	Kubernetes (Minikube)
 CI/CD	Optional: GitHub Actions / Jenkins
 Package Management	Bundler, Gems
+
 Architecture Diagram
           +----------------+
           |  Client / CURL |
@@ -197,7 +196,11 @@ Response:
   "score": 2
 }
 
+<img width="1362" height="675" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/7f3a0a06-a4d9-4802-a44a-df702d73163e" />
+
 Project Status
 
 ✅ Completed: Rails API + Docker + Helm + Kubernetes deployment
-⚡ Optional: CI/CD pipelines, production-ready secrets management, TLS
+
+
+<img width="1341" height="676" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/e19492c1-b2e8-4272-9bb0-4764fe96c1c3" />
