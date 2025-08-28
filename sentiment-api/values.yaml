@@ -1,0 +1,19 @@
+replicaCount: 1
+
+image:
+  repository: pavithra809/rails-sentiment
+  tag: "0.1"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: sentiment.local
+      paths:
+        - path: /
+          pathType: Prefix
