@@ -27,7 +27,7 @@ Table of Contents
 11. Project Status
 
 
-Project Overview
+1. Project Overview
 
 This project demonstrates the full lifecycle of a modern web API:
 
@@ -43,7 +43,7 @@ Logs and request handling monitored via Kubernetes
 
 It serves as a portfolio project for DevOps and Cloud engineering roles.
 
-Features
+2. Features
 
 /sentiment endpoint that returns JSON response:
 
@@ -60,7 +60,7 @@ Easy deployment to Kubernetes clusters via Helm
 
 Real-time logging and monitoring through kubectl logs
 
-Technology Stack
+3. Technology Stack
 
 Backend	Ruby on Rails 8.0
 Language	Ruby 3.2
@@ -69,7 +69,7 @@ Container Orchestration	Kubernetes (Minikube)
 CI/CD	Optional: GitHub Actions / Jenkins
 Package Management	Bundler, Gems
 
-Architecture Diagram
+4. Architecture Diagram
           +----------------+
           |  Client / CURL |
           +--------+-------+
@@ -94,37 +94,33 @@ Architecture Diagram
            | rails-sentiment|
            +---------------+
 
-Getting Started
-Prerequisites
+5. Getting Started
+   
+6. Prerequisites
+   Docker
+   Minikube
+   Helm
+   jq (optional, for JSON formatting)
 
-Docker
+7. Running Locally
 
-Minikube
+ Clone the repo:
 
-Helm
-
-jq
- (optional, for JSON formatting)
-
-Running Locally
-
-Clone the repo:
-
-git clone https://github.com/<your-username>/rails-sentiment-api.git
-cd rails-sentiment-api
+ git clone https://github.com/<your-username>/rails-sentiment-api.git
+ cd rails-sentiment-api
 
 
-Install dependencies:
+ Install dependencies:
 
-bundle install
-
-
-Start Rails server:
-
-rails s -b 0.0.0.0 -p 3000
+ bundle install
 
 
-Test API:
+ Start Rails server:
+
+ rails s -b 0.0.0.0 -p 3000
+
+
+ Test API:
 
 curl -X POST http://127.0.0.1:3000/sentiment \
   -H "Content-Type: application/json" \
@@ -134,35 +130,35 @@ curl -X POST http://127.0.0.1:3000/sentiment \
 <img width="1114" height="583" alt="Test Output 2" src="https://github.com/user-attachments/assets/5c44ba61-9a64-4cb6-ade9-7b84e2afa455" />
 <img width="1103" height="611" alt="Test Output 1" src="https://github.com/user-attachments/assets/bc1b2407-836a-49cc-b323-a8b9f74caf97" />
 
-Docker Build & Run
+8. Docker Build & Run
 
-Build Docker image:
+ Build Docker image:
 
-docker build -t <username>/rails-sentiment:0.1 .
-docker push <username>/rails-sentiment:0.1
-
-
-Run container locally:
-
-docker run -p 3000:80 <username>/rails-sentiment:0.1
-
-Kubernetes Deployment
-
-Start Minikube:
-
-minikube start
-eval $(minikube -p minikube docker-env)
+ docker build -t <username>/rails-sentiment:0.1 .
+ docker push <username>/rails-sentiment:0.1
 
 
-Install the Helm chart:
+ Run container locally:
 
-helm upgrade --install sentiment-api ./sentiment-api
+ docker run -p 3000:80 <username>/rails-sentiment:0.1
+
+9. Kubernetes Deployment
+
+  Start Minikube:
+
+  minikube start
+  eval $(minikube -p minikube docker-env)
 
 
-Check pods:
+  Install the Helm chart:
 
-kubectl get pods
-kubectl logs -l app=sentiment-api -f
+  helm upgrade --install sentiment-api ./sentiment-api
+
+
+ Check pods:
+
+ kubectl get pods
+ kubectl logs -l app=sentiment-api -f
 
 <img width="1106" height="629" alt="Kubectl pods" src="https://github.com/user-attachments/assets/c0ccbb77-d679-4aed-b364-5e1d201b0219" />
 
@@ -178,12 +174,12 @@ curl -X POST http://127.0.0.1:3000/sentiment \
   -H "Content-Type: application/json" \
   -d '{"text":"I love awesome coffee"}' | jq
 
-API Usage
+10. API Usage
 
-Endpoint: POST /sentiment
-Headers: Content-Type: application/json
-Body:
-
+    Endpoint: POST /sentiment
+    Headers: Content-Type: application/json
+    Body:
+   
 {
   "text": "I love awesome coffee"
 }
@@ -198,7 +194,7 @@ Response:
 
 <img width="1362" height="675" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/7f3a0a06-a4d9-4802-a44a-df702d73163e" />
 
-Project Status
+11. Project Status
 
 ✅ Completed: Rails API + Docker + Helm + Kubernetes deployment
 
