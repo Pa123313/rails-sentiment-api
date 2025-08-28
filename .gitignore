@@ -52,3 +52,4 @@ Thumbs.db
 # Large binaries (example: minikube)
 minikube-linux-amd64
 
+echo "minikube-linux-amd64" >> .gitignore
